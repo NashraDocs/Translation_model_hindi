@@ -3,10 +3,10 @@
 
 This project implements a sequence-to-sequence transliteration model for Hindi using deep learning techniques. The core training script is trainRNN.py, and the model is highly configurable through command-line arguments.
 
-Setup Instructions
+# Setup Instructions
 Clone the repository and extract the files.
 
-Install dependencies using the requirements.txt file provided:
+# Install dependencies 
 
 
 pip install requirement.txt
