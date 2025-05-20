@@ -1,12 +1,19 @@
-# Translation_model_hindi
+# Translation_Model_Hindi
+# Assignment 3 – Deep Learning
 
-Deep learning_assignment3
-please install the dependencies before running the program other wise it may give error .I have added the requirement.txt file in the same folder. Please download the code from github and extract it .Then install the dependencies and run trainRNN.py .Note that all the other necessary module should be there in the same folder as with trainRNN.py as it import all the other classes from different file . If you want to run it in kaggle/colab it will also run normally as command promt.
+This project implements a sequence-to-sequence transliteration model for Hindi using deep learning techniques. The core training script is trainRNN.py, and the model is highly configurable through command-line arguments.
 
+Setup Instructions
+Clone the repository and extract the files.
+
+Install dependencies using the requirements.txt file provided:
 
 
 pip install requirement.txt
 
+Ensure all scripts are in the same folder as trainRNN.py, since it imports other modules from local files.
+
+Run the training script using the following command:
 
 python trainRNN.py -p path
 
@@ -41,8 +48,9 @@ A heatmap visualization of attention weights can be optionally generated using -
 
 This will run my best model which i get by validation accuracy. after that it will create a log in a project named CS6910-assignment12 by default until user dont specify project name.
 
-
-# "parameters":
+# Dataset Compatibility
+This model is designed specifically for Hindi transliteration. Using datasets from other languages like Assamese or Urdu may result in errors.
+# Default Parameters Used in Best Model:
     {
         'hidden_size': {"values":[256]},
         'batch_size': {"values":[64]},
@@ -55,7 +63,13 @@ This will run my best model which i get by validation accuracy. after that it wi
         'bidirectional':{"values":[True]}
 }
       
-    }```
+# Final Notes
+Ensure the dataset folder structure is preserved.
+
+Always verify that required dependencies are installed.
+
+Logs and metrics will be uploaded to WandB if credentials are properly set.
+
 Now if you want to change the number of layer I just have to execute the following the command.
 python trainRNN.py -e 6
 
