@@ -21,21 +21,22 @@ For example C:\Users\USER\Downloads\aksharantar_sampled\aksharantar_sampled\tel 
 program will add train and val portion itself. 
 My model is prepare to work on Hindi language so giving location to other dataset for example asami or urdu give error .
 
-# Name	                             Default Value	                           Description
--wp ,                               --project_name	Assignment3_DL	           it will make login into wandb in the project_name project
--e,                                 --epochs	                               15	number of epochs your algorithm iterate
--b,                                 --batch_size 64	                           batch size your model used to train
--es,                                --cell_type	LSTM	                       Choices=['LSTM', 'RNN', 'GRU']
--we,                                --wandb_entity                       amaannashra012-iit-madras-alumni-assosiation used to track experiments in Weights & Biases dashboard
--es,                                --embedding_size 256	                   Embedding size of the decoder and encoder
--p,                                 --path	                                   mandatory field	location where your data stored.
--hs,                                --hidden_size 256	                       hidden size of the decoder and encoder
--enl,                               --encoder_num_layer	2	                   number of layer in the encoder
--dnl,                               --decoder_num_layer	1	                   number of layer in the decoder
--do,                                --dropout_rate	0.3	                       dropout rate to control overfitting
--bd,                                --bidirectional	True	                   Choices=[True,False], bidirectional cell will be used or
--a,                                 --attention	1	                           Choices=[1,0], attention will be applied or not
--hp,                                --plot_heatmap	0	                       Choices=[1,0], heatmap will be created and plot and logged to wandb
+This script supports a range of command-line arguments for configuring and training a deep learning model. 
+
+
+The --project_name or -wp argument, which defaults to Assignment3_DL, specifies the project name for logging runs to Weights & Biases (WandB). 
+
+
+The --wandb_entity or -we flag identifies the WandB entity, such as amaannashra012-iit-madras-alumni-assosiation, for organizing experiment tracking.
+The training duration is set using --epochs or -e, with a default of 15, while --batch_size or -b determines the batch size used during training, defaulting to 64.
+
+The model's architecture can be customized via --cell_type or -es, allowing a choice among LSTM, RNN, or GRU (default is LSTM). The --embedding_size or -es and --hidden_size or -hs arguments set the size of the encoder and decoder embeddings and hidden states, respectively, both defaulting to 256.
+
+The number of layers in the encoder and decoder are specified with --encoder_num_layer or -enl (default 2) and --decoder_num_layer or -dnl (default 1). Dropout is controlled using --dropout_rate or -do, with a default of 0.3 to prevent overfitting. 
+
+The --bidirectional or -bd flag enables the use of bidirectional RNNs if set to True. The --attention or -a argument (1 for enabled, 0 for disabled) determines whether an attention mechanism is applied during decoding. 
+
+A heatmap visualization of attention weights can be optionally generated using --plot_heatmap or -hp (1 to enable, 0 to disable). Finally, the --path or -p argument is mandatory and specifies the directory path where the training data is located.
 
 
 This will run my best model which i get by validation accuracy. after that it will create a log in a project named CS6910-assignment12 by default until user dont specify project name.
